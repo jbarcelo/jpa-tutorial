@@ -1,0 +1,16 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
+    <persistence-unit name="jpa-demo-local" transaction-type="RESOURCE_LOCAL">
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/jpa_demo" />
+            <property name="jakarta.persistence.jdbc.user" value="example-user" />
+            <property name="jakarta.persistence.jdbc.password" value="my_cool_secret" />
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create" />
+            <!--
+            If you are using MariaDB SkySQL (https://mariadb.com/products/skysql),
+            enable SSL and specify the path to the CA chain file that you can download
+            from the SkySQL Portal (https://cloud.mariadb.com):
+                jdbc:mariadb://demo-db0000xxxx.mdb000xxxx.db.skysql.net:5047/jpa_demo?useSsl=true&serverSslCert=/path/to/your/skysql_chain.pem
+            -->
+        </properties>
+    </persistence-unit>
+</persistence>
